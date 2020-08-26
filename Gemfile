@@ -41,7 +41,8 @@ end
 group :test do
   gem 'capybara', '3.33.0'
   gem 'database_cleaner-active_record', '1.8.0'
-  gem 'factory_bot', '6.1.0'
+  gem 'factory_bot_rails', '4.8.2'
+  gem 'rails-controller-testing'
   gem 'shoulda-matchers', '4.4.0'
 end
 

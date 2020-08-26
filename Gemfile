@@ -21,17 +21,15 @@ gem 'webpacker', '5.2.1'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry-rails', '0.3.9'
+  gem 'rspec-rails', '4.0.1'
 end
 
 group :development do
+  gem 'annotate', '3.1.1'
   gem 'listen', '3.2.1'
   gem 'spring', '2.1.1'
   gem 'spring-watcher-listen', '2.0.1'
   gem 'web-console', '4.0.4'
-end
-
-group :development, :test do
-  gem 'rspec-rails', '4.0.1'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

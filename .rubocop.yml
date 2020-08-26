@@ -5,9 +5,10 @@ AllCops:
   TargetRubyVersion: 2.7.1
   Exclude:
     - 'bin/bundle'
-    - "db/schema.rb"
-    - "db/migrate/*"
+    - 'db/schema.rb'
+    - 'db/migrate/*'
     - 'config/environments/*'
+    - 'lib/tasks/auto_annotate_models.rake'
     - 'config/initializers/doorkeeper.rb'
     - 'node_modules/**/*'
     - 'vendor/**/*'

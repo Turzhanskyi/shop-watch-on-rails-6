@@ -13,3 +13,10 @@ document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
   $('[data-toggle="popover"]').popover()
 })
+
+import "./components/easydrop"
+import "./components/flexs"
+import "./components/jquery.easydropdown"
+import "./components/jquery.flexslider"
+import "./components/mem"
+import "./components/memenu"

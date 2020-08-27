@@ -9,6 +9,7 @@ gem 'bootsnap', '1.4.8', require: false
 gem 'coffee-rails', '5.0.0'
 gem 'faker', '2.13.0'
 gem 'jbuilder', '2.10.0'
+gem 'meta-tags', '2.13.0'
 gem 'oj', '3.10.12'
 gem 'oj_mimic_json', '1.0.1'
 gem 'overcommit', '0.55.0'

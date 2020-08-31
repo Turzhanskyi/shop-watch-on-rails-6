@@ -11,5 +11,5 @@ require 'rails_helper'
 
 RSpec.describe RelatedProduct, type: :model do
   it { should belong_to(:product) }
-  it { should belong_to(:related) }
+  it { should belong_to(:related).class_name('Product') }
 end

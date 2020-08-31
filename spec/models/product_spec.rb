@@ -30,4 +30,6 @@ RSpec.describe Product, type: :model do
   it { should have_many(:related).through(:related_products) }
 
   it { should have_many(:galleries).dependent(:destroy) }
+
+  it { should belong_to(:category) }
 end

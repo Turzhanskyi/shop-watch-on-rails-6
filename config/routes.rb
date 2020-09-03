@@ -2,5 +2,7 @@
 
 Rails.application.routes.draw do
   resources :product, only: :show
+  resources :categories, only: :show
+
   root to: 'main#index'
 end

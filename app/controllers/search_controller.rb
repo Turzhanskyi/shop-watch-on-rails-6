@@ -17,7 +17,7 @@ class SearchController < ApplicationController
   end
 
   def text_search
-    search_text = ['%' + search_params[:query].strip + '%'].join
+    search_text = ['%', search_params[:query].strip, '%'].join
     Product.where('title ILIKE ?', search_text)
   end
 end

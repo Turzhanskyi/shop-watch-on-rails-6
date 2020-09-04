@@ -29,5 +29,7 @@ class Product < ApplicationRecord
 
   has_many :galleries, dependent: :destroy
 
+  belongs_to :category
+
   enum hit: { hit: 1, not_hit: 0 }
 end

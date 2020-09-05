@@ -9,6 +9,7 @@ gem 'ancestry', '3.1.0'
 gem 'bootsnap', '1.4.8', require: false
 gem 'breadcrumbs_on_rails', '4.0.0'
 gem 'coffee-rails', '5.0.0'
+gem 'devise', '4.7.2'
 gem 'faker', '2.13.0'
 gem 'jbuilder', '2.10.0'
 gem 'meta-tags', '2.13.0'
@@ -22,6 +23,7 @@ gem 'rubocop', '0.89.1', require: false
 gem 'rubocop-rails', '2.7.1', require: false
 gem 'rubocop-rspec', '1.43.2', require: false
 gem 'sass-rails', '6.0.0'
+gem 'simple_form', '5.0.2'
 gem 'turbolinks', '5.2.1'
 gem 'webpacker', '5.2.1'
 

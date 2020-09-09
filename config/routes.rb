@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :search, only: :index
 
   resource :cart, only: %i[destroy show] do
-    resources :cart_items, only: %i[destroy create]
+    resources :items, only: %i[destroy create]
   end
 
   root to: 'main#index'

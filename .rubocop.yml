@@ -88,6 +88,10 @@ Layout/MultilineMethodCallIndentation:
 Naming/MemoizedInstanceVariableName:
   Enabled: false
 
+Rails/HelperInstanceVariable:
+  Exclude:
+    - app/helpers/**/*.rb
+
 Rails/SkipsModelValidations:
   Enabled: false
 

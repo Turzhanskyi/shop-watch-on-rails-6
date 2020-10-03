@@ -7,6 +7,7 @@ require File.expand_path('../config/environment', __dir__)
 
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
+require 'devise'
 require 'shoulda/matchers'
 require 'rspec/json_expectations'
 require 'database_cleaner'
@@ -20,6 +21,7 @@ end
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.include FactoryBot::Syntax::Methods
+  config.include Devise::Test::ControllerHelpers, type: :controller
   config.before(:suite) do
     FactoryBot.definition_file_paths = [File.expand_path('factories', __dir__)]
     FactoryBot.find_definitions

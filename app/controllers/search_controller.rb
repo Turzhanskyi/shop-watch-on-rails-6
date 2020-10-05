@@ -4,7 +4,14 @@ class SearchController < ApplicationController
   before_action :set_page_options
 
   def index
-    @products = text_search
+    @products = Product.ransack(title_cont: params[:q]).result(distinct: true)
+
+    respond_to do |format|
+      format.html {}
+      format.json do
+        @products = @products.limit(5)
+      end
+    end
   end
 
   def set_page_options
@@ -17,7 +24,7 @@ class SearchController < ApplicationController
   end
 
   def text_search
-    search_text = ['%', search_params[:query].strip, '%'].join
+    search_text = ['%' + search_params[:query] + '%'].join
     Product.where('title ILIKE ?', search_text)
   end
 end

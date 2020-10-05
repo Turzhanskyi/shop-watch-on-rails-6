@@ -2,16 +2,13 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
-  end
 
-  resources :product, only: :show
-  resources :categories, only: :show
-  resources :search, only: :index
+  resources :product, only: [:show]
+  resources :category, only: [:show]
   resource :cart, only: %i[destroy show] do
-    resources :items, only: %i[destroy create]
+    resources :cart_items, only: %i[destroy create]
   end
+  resources :search, only: [:index]
 
   root to: 'main#index'
 end

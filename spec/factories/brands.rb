@@ -12,12 +12,11 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
-
 FactoryBot.define do
   factory :brand do
-    title { Faker::Superhero.name }
-    bytitle { title.downcase }
-    img { title.downcase }
+    title       { Faker::Lorem.sentence(word_count: 10) }
+    bytitle     { Faker::Lorem.sentence(word_count: 10).downcase }
+    img         { Faker::Lorem.sentence(word_count: 10).downcase }
     description { Faker::Lorem.sentence(word_count: 10) }
   end
 end

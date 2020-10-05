@@ -18,7 +18,6 @@
 #  index_categories_on_ancestry  (ancestry)
 #
 class Category < ApplicationRecord
-  has_many :products, dependent: :destroy
-
   has_ancestry
+  has_many :products, dependent: :destroy
 end

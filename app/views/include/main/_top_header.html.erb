@@ -4,7 +4,7 @@
       <div class="col-md-6 top-header-left">
         <div class="drop">
           <div class="box">
-            <select tabindex="4" class="dropdown">
+            <select tabindex="4" class="dropdown" >
               <option value="" class="label">Dollar:</option>
               <option value="1">Dollar</option>
               <option value="2">Euro</option>
@@ -19,15 +19,15 @@
             </select>
           </div>
           <div class="btn-group">
-            <a class="dropdown-toggle" data-toggle="dropdown">Account</a>
+            <a class="dropdown-toggle" data-toggle="dropdown"><span>Account</span></a>
             <ul class="dropdown-menu">
               <% if user_signed_in? %>
                 <% if current_user.try(:admin?) %>
                   <li>
-                    <%= link_to 'administrator', '#', style: 'color: red' %>
+                    <%= link_to "administrator", "#", style: "color: red" %>
                   </li>
                   <li>
-                    <%= link_to 'API', '/oauth/applications', style: 'color: blue' %>
+                    <%= link_to "API", '/oauth/applications', style: "color: blue" %> 
                   </li>
                 <% end %>
                 <li>
@@ -36,33 +36,42 @@
                   </a>
                 </li>
                 <li>
-                  <%= link_to 'Вихід', destroy_user_session_path, method: :delete %>
+                  <%= link_to "Вихід", destroy_user_session_path, method: :delete %>
                 </li>
                 <li>
-                  <%= link_to 'Редагувати', edit_user_registration_path %>
+                  <%= link_to "Редагування", edit_user_registration_path %>
                 </li>
               <% else %>
                 <li>
-                  <%= link_to 'Увійти', new_user_session_path %>
+                  <%= link_to "Вхід", new_user_session_path %>
                 </li>
                 <li>
-                  <%= link_to 'Реєстрація', new_user_registration_path %>
-                </li>
+                  <%= link_to "Реєстрація", new_user_registration_path %>
+                </li>  
               <% end %>
             </ul>
           </div>
+          
           <div class="clearfix"></div>
         </div>
       </div>
-      <div class="col-md-6 top-header-left">
+      <div class="">
         <div class="cart box_1">
-          <a href="/cart" onclick="getCart(); return false;">
+          <a href="/cart" onclick="getCart(); return false;", data-turbolinks="false">
             <div class="total">
+              <%= image_pack_tag('media/styles/images/cart-1.png', alt: "") %>
+              <% if cart_items.any? %>
+                <span class="simpleCart_total">
+                  <%= format("%.2f", cart_total) %> $
+                </span>
+              <% else %>
+                <span class="simpleCart_total">Empty Cart</span>  
+              <% end %>
             </div>
           </a>
           <div class="clearfix"></div>
         </div>
-      </div>
+      </div> 
       <div class="clearfix"></div>
     </div>
   </div>

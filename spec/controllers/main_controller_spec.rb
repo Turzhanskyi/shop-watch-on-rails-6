@@ -16,7 +16,7 @@ RSpec.describe MainController, type: :controller do
       it 'instance var brands include only brands' do
         expect(assigns(:brands)).to match_array(brands)
       end
-      it 'instance var hits include only hits' do
+      it 'instance var hits include only hit' do
         expect(assigns(:hits)).to match_array(hits)
       end
     end

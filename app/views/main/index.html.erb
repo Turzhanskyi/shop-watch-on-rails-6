@@ -1,14 +1,19 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <%= image_pack_tag'media/stylesheets/images/bnr-1.jpg' %>
+      <%= image_pack_tag'media/styles/images/bnr-1.jpg' %>
     </div>
+    
+  
     <div class="carousel-item">
-      <%= image_pack_tag'media/stylesheets/images/bnr-2.jpg' %>
+      <%= image_pack_tag'media/styles/images/bnr-2.jpg' %>
     </div>
+    
+    
     <div class="carousel-item">
-      <%= image_pack_tag'media/stylesheets/images/bnr-3.jpg' %>
+      <%= image_pack_tag'media/styles/images/bnr-3.jpg' %>
     </div>
+    
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -17,14 +22,14 @@
   <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
-  </a>
+  </a> 
 </div>
 <div class="clearfix"></div>
 <!--slick-slider main.js
 <div class="slick-slider">
-  <div><%= image_pack_tag'media/stylesheets/images/bnr-1.jpg' %></div>
-  <div><%= image_pack_tag'media/stylesheets/images/bnr-2.jpg' %></div>
-  <div><%= image_pack_tag'media/stylesheets/images/bnr-3.jpg' %></div>
+  <div><%= image_pack_tag'media/styles/images/bnr-1.jpg' %></div>
+  <div><%= image_pack_tag'media/styles/images/bnr-2.jpg' %></div>
+  <div><%= image_pack_tag'media/styles/images/bnr-3.jpg' %></div>
 </div>
 slick-slider main.js-end-->
 
@@ -37,8 +42,8 @@ slick-slider main.js-end-->
       <div class="about-top grid-1">
         <% @brands.each do |i| %>
           <div class="col-md-4 about-left">
-            <figure class="effect-bubba">
-              <%= image_pack_tag 'media/stylesheets/images/'+i.img, class: "img-responsive"%>
+            <figure class="effect-bubba"> 
+              <%= image_pack_tag 'media/styles/images/'+i.img, class: "img-responsive"%>
               <figcaption>
                 <h2><%= i.title %></h2>
                 <p><%= i.description %></p>
@@ -47,7 +52,7 @@ slick-slider main.js-end-->
           </div>
         <% end %>
         <div class="clearfix"></div>
-      </div>
+      </div> 
     </div>
   </div>
   <!--About-Ends-->
@@ -64,9 +69,13 @@ slick-slider main.js-end-->
           <% @hits.hit.each do |hit| %>
             <div class="product-left col-md-3">
               <div class="product-main">
+                
                 <a href="product/<%=hit.id%>" class="mask" data-turbolinks="false">
-                  <%= image_pack_tag 'media/stylesheets/images/'+hit.img, alt: "", class: "img-responsive zoom-img" %>
+                
+                  <%= image_pack_tag 'media/styles/images/'+hit.img, alt: "", class: "img-responsive zoom-img" %>
+                
                 </a>
+              
                 <div class="product-bottom">
                   <h3><a href="product/<%=hit.id%>" data-turbolinks="false"><%=hit.title%></a></h3>
                   <p>Explore Now</p>
@@ -87,11 +96,12 @@ slick-slider main.js-end-->
                 </div>
               </div>
             </div>
-          <% end %>
+          <% end %>                          
           <div class="clearfix"></div>
         </div>
       </div>
     </div>
   </div>
-<% end %>
+<% end %>  
 <!--product-end-->
+<input type="hidden" value="<%= !current_user.nil? ? 88 : 99 %>" id="cart_access" />

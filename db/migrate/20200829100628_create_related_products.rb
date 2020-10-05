@@ -3,9 +3,12 @@ class CreateRelatedProducts < ActiveRecord::Migration[6.0]
     create_table :related_products, id: false do |t|
       t.integer :product_id
       t.integer :related_id
-    end
 
-    execute "INSERT INTO related_products
+      
+  end
+
+  
+  insert "INSERT INTO related_products
       (product_id , related_id)
       VALUES
       (1, 9),(1, 8),(1, 7),
@@ -17,5 +20,10 @@ class CreateRelatedProducts < ActiveRecord::Migration[6.0]
       (7, 4),(7, 1),(7, 2),
       (8, 4),(8, 1),(8, 2),
       (9, 4),(9, 1),(9, 2)"
+
+  
+
+                      
   end
 end
+

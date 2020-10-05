@@ -13,7 +13,6 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.string :description
       t.string :img, default: 'no_image.jpg'
       t.integer :hit, default: 0
-
       t.timestamps
     end
   end

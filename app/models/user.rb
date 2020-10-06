@@ -20,13 +20,14 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  include UserOath
+
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: [:facebook]
 
+  validates :email, :password, presence: true
+
+  has_many :authorizations, dependent: :destroy
   has_one :cart, dependent: :destroy
-
-  validates :email, presence: true
-  validates :password, presence: true
 end

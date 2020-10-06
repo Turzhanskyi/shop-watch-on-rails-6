@@ -22,6 +22,9 @@ Lint/DeprecatedOpenSSLConstant:
 Lint/MixedRegexpCaptureTypes:
   Enabled: true
 
+Style/IdenticalConditionalBranches:
+  Enabled: false
+
 Style/RedundantRegexpCharacterClass:
   Enabled: true
 
